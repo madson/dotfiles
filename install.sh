@@ -1,9 +1,7 @@
 #!/bin/bash
 
-cd ~
-
 if [ ! -d ~/.dotfiles ]; then
-  git clone git@github.com:madson/dotfiles.git .dotfiles || exit 1
+  git clone git@github.com:madson/dotfiles.git ~/.dotfiles || exit 1
 fi
 
 if [ ! -d ~/.dotfiles ]; then
@@ -21,11 +19,11 @@ then
 fi
 
 echo "Creating links..."
-for file in $(ls ~/.dotfiles/bash_inc*)
+cd ~/.dotfiles
+for file in $(ls bash_inc*)
 do
   ln -s $file ~/.$file
 done
-
 cd -
 
 echo "Done."
