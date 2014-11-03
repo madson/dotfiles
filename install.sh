@@ -13,15 +13,15 @@ fi
 
 if [ -f ~/.bash_profile ]
 then
-  echo "Backing up your ~/.bash_profile file into ~/.bash_profile_original"
-  cp ~/.bash_profile ~/.bash_profile_original
+	echo "Backing up your ~/.bash_profile file into ~/.bash_profile_original"
+	cp ~/.bash_profile ~/.bash_profile_original
 
 	echo "Changing .bash_profile..."
-	cat bash_init >> ~/.bash_profile
+	cat ~/.dotfiles/bash_init >> ~/.bash_profile
 fi
 
 echo "Creating links..."
-for file in $(ls bash_inc*)
+for file in $(ls ~/.dotfiles/bash_inc*)
 do
   ln -s $file ~/.$file
 done
