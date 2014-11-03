@@ -22,7 +22,7 @@ echo "Creating links..."
 cd ~/.dotfiles
 for file in $(ls bash_inc*)
 do
-  ln -s $file ~/.$file
+  ln -s ~/.dotfiles/$file ~/.$file
 done
 cd -
 
