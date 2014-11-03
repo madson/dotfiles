@@ -1,0 +1,7 @@
+GREEN='\e[1;32m'
+BLUE='\e[1;34m'
+YELLOW='\e[0;33m'
+NO_COLOR='\e[0m' #disable any colors
+
+PS1="\n\[$GREEN\]\u@\h: \[$BLUE\]\w \[$YELLOW\]\$(parse_git_branch)\[$NO_COLOR\] \n\$ "
+
