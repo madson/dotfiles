@@ -26,5 +26,7 @@ do
 done
 cd -
 
+source ~/.bash_profile
+
 echo "Done."
 
