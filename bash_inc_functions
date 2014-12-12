@@ -4,13 +4,13 @@ function onlynumbers {
 }
 
 # fix-branch some bugfix with long name
-function fix-branch() {
+function fix_branch() {
     local new_branch_name=$(echo "$*" | tr " " _)
     git checkout -b fix/$new_branch_name
 }
 
 # feature-branch some feature with log name
-function feature-branch() {
+function feature_branch() {
     local new_branch_name=$(echo "$*" | tr " " _)
     git checkout -b feature/$new_branch_name
 }
