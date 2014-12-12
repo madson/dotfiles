@@ -2,6 +2,3 @@
 alias l='ls -lhG'
 alias ll='ls -lahG'
 
-alias pushall='for remote in $(git remote); do git push $remote master; done'
-alias submitBuscape='ssh jenkins@axe.grupo-buscape.com.br "/usr/bin/perl /Users/Shared/Jenkins/Home/jobs/Buscape\ iOS/submit.pl force"'
-

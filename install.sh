@@ -22,7 +22,12 @@ echo "Creating links..."
 cd ~/.dotfiles
 for file in $(ls bash_inc*)
 do
-  ln -s ~/.dotfiles/$file ~/.$file
+	if [ -f "~/.$file" ]
+	then
+		mv "~/.$file" "~/.${file}_original"
+	fi
+
+  ln -s "~/.dotfiles/${file}" "~/.${file}"
 done
 cd -
 
