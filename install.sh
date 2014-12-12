@@ -24,10 +24,10 @@ for file in $(ls bash_inc*)
 do
 	if [ -f "~/.$file" ]
 	then
-		mv "~/.$file" "~/.${file}_original"
+		mv ~/.${file} ~/.${file}_original
 	fi
 
-  ln -s "~/.dotfiles/${file}" "~/.${file}"
+  ln -s ~/.dotfiles/${file} ~/.${file}
 done
 cd -
 
