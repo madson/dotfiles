@@ -13,10 +13,10 @@ if [ -f ~/.bash_profile ]
 then
 	echo "Backing up your ~/.bash_profile file into ~/.bash_profile_original"
 	cp ~/.bash_profile ~/.bash_profile_original
-
-	echo "Changing .bash_profile..."
-	cat ~/.dotfiles/bash_init >> ~/.bash_profile
 fi
+
+echo "Changing .bash_profile..."
+cat ~/.dotfiles/bash_init >> ~/.bash_profile
 
 echo "Creating links..."
 cd ~/.dotfiles
