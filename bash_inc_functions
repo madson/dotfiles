@@ -27,3 +27,9 @@ function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+function git-diff-only() {
+        for file in $(git status -s | grep "$1" | sed s/^...//)
+        do
+                git diff $file
+        done
+}
