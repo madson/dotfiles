@@ -35,5 +35,5 @@ function gitdiffonly() {
 }
 
 function gitlog() {
-  git log $1 --format="%C(auto)%h|%C(reset)%s|%C(red)%cI%C(reset)|%C(blue)%cn" | awk -F '|' '{ printf "%s %-50s %s %s\n", $1, substr($2, 0, 50), $3, $4 }'
+  git log $1 --format="%C(auto)%h|%C(reset)%s|%C(red)%cd%C(reset)|%C(blue)%cn" | awk -F '|' '{ printf "%s %-50s %-38s %s\n", $1, substr($2, 0, 50), $3, $4 }'
 }
