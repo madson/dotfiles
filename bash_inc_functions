@@ -4,18 +4,18 @@ function onlynumbers {
 }
 
 # fix-branch some bugfix with long name
-function fix_branch() {
+function gitfixbranch() {
     local new_branch_name=$(echo "$*" | tr " " _)
     git checkout -b fix/$new_branch_name
 }
 
 # feature-branch some feature with log name
-function feature_branch() {
+function gitfeaturebranch() {
     local new_branch_name=$(echo "$*" | tr " " _)
     git checkout -b feature/$new_branch_name
 }
 
-function bulk_git_cmd() {
+function gitbulkcmd() {
 	for line in $(git status --porcelain | sed s/^...// | grep $2)
 	do
 		echo "git $1 $line"
@@ -23,7 +23,17 @@ function bulk_git_cmd() {
 	done
 }
 
-function parse_git_branch () {
+function gitparsebranch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+function gitdiffonly() {
+	for file in $(git status -s | grep "$1" | sed s/^...//)
+	do
+		git diff $file
+	done
+}
+
+function gitlog() {
+  git log $1 --format="%C(auto)%h|%C(reset)%s|%C(red)%cI%C(reset)|%C(blue)%cn" | awk -F '|' '{ printf "%s %-50s %s %s\n", $1, substr($2, 0, 50), $3, $4 }'
+}
