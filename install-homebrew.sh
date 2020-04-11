@@ -6,3 +6,5 @@ brew install go
 brew install terraform
 brew install httpie
 brew install rbenv
+brew install gnupg
+
